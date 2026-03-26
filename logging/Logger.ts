@@ -10,10 +10,8 @@
  */
 
 import { ILogObj, Logger } from "tslog";
+import configs from "../configs/Configs";
 
-const minLevel: number = process.env.LOG_LEVEL
-    ? Number.parseInt(process.env.LOG_LEVEL)
-    : 0;
-const logger: Logger<ILogObj> = new Logger({ minLevel });
+const logger: Logger<ILogObj> = new Logger({ minLevel: configs.logging.level });
 
 export default logger;
