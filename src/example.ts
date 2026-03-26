@@ -1,6 +1,5 @@
 import configs from "../configs/Configs";
 import logger from "../logging/Logger";
-import dotenv from "dotenv";
 
 function checkLogger(): void {
     logger.debug("dir is", __dirname);
