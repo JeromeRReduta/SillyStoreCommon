@@ -1,5 +1,4 @@
-/** Represents an order in the database */
-export interface OrderData {
+export interface Order {
     readonly id: number;
     readonly dateStr: string;
     readonly note?: string;

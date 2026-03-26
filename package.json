@@ -1,0 +1,18 @@
+{
+    "name": "silly_store_common",
+    "private": true,
+    "version": "0.0.0",
+    "scripts": {
+        "example": "NODE_ENV=example tsx src/example.ts"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.1",
+        "@types/node": "^22.19.15"
+    },
+    "dependencies": {
+        "dotenv": "^17.3.1",
+        "tslog": "^4.10.2",
+        "tsx": "^4.19.3",
+        "typescript": "^5.8.3"
+    }
+}

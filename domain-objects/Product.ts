@@ -1,5 +1,4 @@
-/** Represents a product in the database */
-export interface ProductData {
+export interface Product {
     readonly id: number;
     readonly imageSrc: string;
     readonly title: string;
