@@ -1,7 +1,4 @@
-import { error } from "console";
 import dotenv from "dotenv";
-import { prototype } from "events";
-import { env } from "process";
 import { requireNumber, requireStr } from "./ConfigValidation";
 
 export interface Configs {
