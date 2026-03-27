@@ -1,1 +1,4 @@
-/** TODO: stub */
+export default interface LoginRequest {
+    readonly username: string;
+    readonly password: string;
+}
