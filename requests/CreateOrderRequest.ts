@@ -1,3 +1,3 @@
-export default interface CreateOrderRequest {
+export interface CreateOrderRequest {
     readonly dateStr: string;
 }
