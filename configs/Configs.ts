@@ -17,7 +17,7 @@ export interface Configs {
 
 dotenv.config({
     debug: true,
-    path: import.meta.url + "/./../.env." + process.env.NODE_ENV,
+    path: import.meta.dirname + "/./../.env." + process.env.NODE_ENV,
 });
 
 /** Note - if .env files/configs are improperly set, this SHOULD crash */
