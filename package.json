@@ -1,18 +1,28 @@
 {
     "name": "silly_store_common",
-    "private": true,
     "version": "0.0.0",
+    "private": true,
+    "type": "module",
     "scripts": {
         "example": "NODE_ENV=example tsx src/example.ts"
-    },
-    "devDependencies": {
-        "@types/express": "^5.0.1",
-        "@types/node": "^22.19.15"
     },
     "dependencies": {
         "dotenv": "^17.3.1",
         "tslog": "^4.10.2",
-        "tsx": "^4.19.3",
-        "typescript": "^5.8.3"
+        "tsx": "^4.19.3"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@types/express": "^5.0.1",
+        "@types/node": "^22.19.15",
+        "eslint": "^10.1.0",
+        "eslint-import-resolver-typescript": "^4.4.4",
+        "eslint-plugin-import-x": "^4.16.2",
+        "globals": "^17.4.0",
+        "jiti": "^2.6.1",
+        "prettier": "^3.8.1",
+        "prettier-plugin-packagejson": "^3.0.2",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.57.2"
     }
 }

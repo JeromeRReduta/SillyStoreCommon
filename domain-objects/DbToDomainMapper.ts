@@ -1,7 +1,7 @@
-import { Order } from "./Order";
-import { OrderProduct } from "./OrderProduct";
-import { User } from "./User";
-import { Product } from "./Product";
+import { type Order } from "./Order.ts";
+import { type OrderProduct } from "./OrderProduct.ts";
+import { type User } from "./User.ts";
+import { type Product } from "./Product.ts";
 
 export interface DbToDomainMapper {
     toUser<TDbUser>(dbUser: TDbUser): User;

@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import { requireNumber, requireStr } from "./ConfigValidation";
+import { requireNumber, requireStr } from "./ConfigValidation.ts";
 
 export interface Configs {
     readonly env: string;
@@ -17,7 +17,7 @@ export interface Configs {
 
 dotenv.config({
     debug: true,
-    path: __dirname + "/./../.env." + process.env.NODE_ENV,
+    path: import.meta.url + "/./../.env." + process.env.NODE_ENV,
 });
 
 /** Note - if .env files/configs are improperly set, this SHOULD crash */

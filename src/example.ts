@@ -1,5 +1,7 @@
-import configs from "../configs/Configs";
-import logger from "../logging/Logger";
+import configs from "../configs/Configs.ts";
+import logger from "../logging/Logger.ts";
+
+// TODO: add eslint plugin import to require .ts extensions for ts files
 
 function checkLogger(): void {
     logger.debug("dir is", __dirname);

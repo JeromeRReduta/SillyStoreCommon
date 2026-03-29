@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+        "module": "nodenext",
+        "lib": ["ESNext", "DOM"],
+        "moduleResolution": "nodenext",
+        "strict": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "noEmit": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "skipLibCheck": true,
+        "allowImportingTsExtensions": true
+    },
+    "include": [
+        "src",
+        "vite-env.d.ts",
+        "eslint.config.ts",
+        "requests",
+        "domain-objects",
+        "logging",
+        "configs"
+    ]
+}
