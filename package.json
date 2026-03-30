@@ -4,10 +4,9 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "example": "NODE_ENV=example tsx src/example.ts"
+        "example": "tsx --env-file=.env.example src/example.ts "
     },
     "dependencies": {
-        "dotenv": "^17.3.1",
         "tslog": "^4.10.2",
         "tsx": "^4.19.3"
     },
