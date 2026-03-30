@@ -1,8 +1,6 @@
-import dotenv from "dotenv";
 import { requireNumber, requireStr } from "./ConfigValidation.ts";
 
 export interface Configs {
-    readonly env: string;
     readonly port: number;
     readonly db: {
         readonly connectionString: string;
@@ -15,14 +13,20 @@ export interface Configs {
     };
 }
 
-dotenv.config({
-    debug: true,
-    path: import.meta.dirname + "/./../.env." + process.env.NODE_ENV,
-});
+const { PORT, DATABASE_URL, JWT_SECRET, MIN_LOG_LEVEL } = process.env;
+console.log(
+    "PORT",
+    PORT,
+    "DB URL",
+    DATABASE_URL,
+    "JWT_SECRET",
+    JWT_SECRET,
+    "MIN_LOG_LEVEL",
+    MIN_LOG_LEVEL,
+);
 
 /** Note - if .env files/configs are improperly set, this SHOULD crash */
 const configs: Configs = {
-    env: requireStr("NODE_ENV", process.env.NODE_ENV),
     port: requireNumber("PORT", process.env.PORT),
     db: {
         connectionString: requireStr("DATABASE_URL", process.env.DATABASE_URL),
