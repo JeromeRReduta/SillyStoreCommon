@@ -13,18 +13,6 @@ export interface Configs {
     };
 }
 
-const { PORT, DATABASE_URL, JWT_SECRET, MIN_LOG_LEVEL } = process.env;
-console.log(
-    "PORT",
-    PORT,
-    "DB URL",
-    DATABASE_URL,
-    "JWT_SECRET",
-    JWT_SECRET,
-    "MIN_LOG_LEVEL",
-    MIN_LOG_LEVEL,
-);
-
 /** Note - if .env files/configs are improperly set, this SHOULD crash */
 const configs: Configs = {
     port: requireNumber("PORT", process.env.PORT),
