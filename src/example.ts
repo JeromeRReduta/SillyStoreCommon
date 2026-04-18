@@ -1,8 +1,8 @@
-import configs from "../configs/Configs.ts";
-import logger from "../logging/Logger.ts";
+import commonConfigs from "../configs/CommonConfigs.ts";
+import logger from "../logging/CommonLogger.ts";
 
 function checkLogger(): void {
-    logger.debug("dir is", import.meta.dirname);
+    logger.debug("dir is", process.env.dirname);
     logger.info("This works!");
 }
 
@@ -17,7 +17,7 @@ function checkEnvVars(): void {
 }
 
 function checkConfigs(): void {
-    logger.debug("configs: ", configs);
+    logger.debug("configs: ", commonConfigs);
 }
 
 function main() {
