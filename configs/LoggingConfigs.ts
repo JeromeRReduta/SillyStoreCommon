@@ -1,3 +1,3 @@
-export interface LoggingConfigs {
+export interface ILoggingConfigs {
     readonly minLevel: number;
 }
