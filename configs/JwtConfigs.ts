@@ -1,3 +1,3 @@
-export interface JwtConfigs {
+export interface IJwtConfigs {
     readonly secret: string;
 }
