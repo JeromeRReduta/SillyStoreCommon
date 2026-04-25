@@ -3,4 +3,7 @@ export interface Order {
     readonly dateStr: string;
     readonly note?: string;
     readonly userId: number;
+    readonly status: OrderStatus;
 }
+
+export type OrderStatus = "pending" | "complete" | "canceled";
