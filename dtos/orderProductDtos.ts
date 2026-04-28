@@ -1,4 +1,3 @@
-import { IOrder } from "../domain-objects/Order.ts";
 import { IUser } from "../domain-objects/User.ts";
 
 export interface IOrderProductResponse {
