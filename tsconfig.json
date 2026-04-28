@@ -17,14 +17,5 @@
         "allowImportingTsExtensions": true,
         "types": ["node"]
     },
-    "include": [
-        "src",
-        "vite-env.d.ts",
-        "eslint.config.ts",
-        "requests",
-        "domain-objects",
-        "logging",
-        "configs",
-        "dtos"
-    ]
+    "include": ["src", "vite-env.d.ts", "eslint.config.ts", "requests", "domain-objects", "logging", "configs", "dtos"]
 }

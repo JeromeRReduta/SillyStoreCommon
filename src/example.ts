@@ -8,12 +8,7 @@ function checkLogger(): void {
 
 function checkEnvVars(): void {
     const { DATABASE_URL, JWT_SECRET, MIN_LOG_LEVEL, PORT } = process.env;
-    logger.debug("env vars from example:\n", [
-        DATABASE_URL,
-        JWT_SECRET,
-        MIN_LOG_LEVEL,
-        PORT,
-    ]);
+    logger.debug("env vars from example:\n", [DATABASE_URL, JWT_SECRET, MIN_LOG_LEVEL, PORT]);
 }
 
 function checkConfigs(): void {

@@ -4,10 +4,7 @@ export type IProductResponse = IProduct;
 export interface IProductWithQuantityResponse extends IProductResponse {
     readonly quantity: number;
 }
-export type ICreateProductRequest = Pick<
-    IProduct,
-    "imageSrc" | "title" | "description" | "price"
->;
+export type ICreateProductRequest = Omit<IProduct, "id">;
 export type IGetAllProductsRequest = object;
 export type IGetProductRequest = Pick<IProduct, "id">;
 export type IUpdateProductRequest = IProduct;

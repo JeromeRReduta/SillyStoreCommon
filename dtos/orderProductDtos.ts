@@ -8,10 +8,7 @@ export interface IOrderProductResponse {
     readonly creatorId: number;
 }
 export type ICreateOrderProductRequest = IOrderProductResponse;
-export type IGetAllOrderProductsRequest = Pick<
-    IOrderProductResponse,
-    "creatorId"
-> &
+export type IGetAllOrderProductsRequest = Pick<IOrderProductResponse, "creatorId"> &
     Pick<IUser, "role">;
 export type IGetOrderProductRequest = Pick<
     IOrderProductResponse,
@@ -32,10 +29,7 @@ export type IGetOrdersIncludingProductRequest = Pick<
 > &
     Pick<IUser, "role">;
 
-export type IGetProductsInPendingOrderRequest = Pick<
-    IOrderProductResponse,
-    "creatorId"
-> &
+export type IGetProductsInPendingOrderRequest = Pick<IOrderProductResponse, "creatorId"> &
     Pick<IUser, "role">;
 
 export type IGetProductsInOrderRequest = IGetProductsInPendingOrderRequest &
@@ -43,32 +37,8 @@ export type IGetProductsInOrderRequest = IGetProductsInPendingOrderRequest &
 
 export interface IMergeOrderProductsInPendingOrderRequest {
     readonly role: IUser["role"];
-    readonly items: Array<
-        Pick<IOrderProductResponse, "productId" | "quantity">
-    >;
+    readonly items: Array<Pick<IOrderProductResponse, "productId" | "quantity">>;
 }
 
-export type IMergeOrderProductsinOrderRequest =
-    IMergeOrderProductsInPendingOrderRequest &
-        Pick<IOrderProductResponse, "orderId">;
-
-/** TODO: Sillystore common:
-    * 
-    * simplify dtos:
-    *  Make use of Pick<TResponse or TDto> and Partial<TResponse or TDto> as necessary
-    *  https://www.typescriptlang.org/docs/handbook/utility-types.html
-    *   ESPECIALLY for update dtos
-    *   make dtos for:
-        (x) dto: merge order products by order id
-        (x) dto: merge order products in pending order
-        (x) dto: get products with quantities
-        (x) dto: get products with quantities in pending order
-
-    
-        Then, figure out how to implement merge order products
-        test for orderproduct dao, then order repo, then client order service
-
-        THEN can finally fkin go to frontend
-    * * 
-    * 
-    */
+export type IMergeOrderProductsinOrderRequest = IMergeOrderProductsInPendingOrderRequest &
+    Pick<IOrderProductResponse, "orderId">;
