@@ -1,4 +1,4 @@
-export interface Product {
+export interface IProduct {
     readonly id: number;
     readonly imageSrc: string;
     readonly title: string;
