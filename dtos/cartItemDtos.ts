@@ -4,18 +4,38 @@ import { IUser } from "../domain-objects/User.ts";
 export type ICartItemResponse = ICartItem;
 export type ICartItemResponseWithCreator = Required<ICartItem>;
 export type ICreateCartItemRequest = ICartItem;
-export type IGetAllCartItemsRequest = ICartItem & Pick<IUser, "role">;
-export type IGetCartItemRequest = Pick<ICartItem, "orderId" | "productId" | "creatorId"> &
-    Pick<IUser, "role">;
-export type IUpdateCartItemRequest = ICartItem & Pick<IUser, "role">;
-export type IDeleteCartItemRequest = Pick<ICartItem, "orderId" | "productId" | "creatorId"> &
-    Pick<IUser, "role">;
+export interface IGetAllCartItemsRequest extends ICartItem {
+    readonly role: IUser["role"];
+}
+export interface IGetCartItemRequest {
+    readonly orderId: ICartItem["orderId"];
+    readonly productId: ICartItem["productId"];
+    readonly creatorId: ICartItem["creatorId"];
+    readonly role: IUser["role"];
+}
+export interface IUpdateCartItemRequest extends ICartItem {
+    readonly role: IUser["role"];
+}
+export interface IDeleteCartItemRequest {
+    readonly orderId: ICartItem["orderId"];
+    readonly productId: ICartItem["productId"];
+    readonly creatorId: ICartItem["creatorId"];
+    readonly role: IUser["role"];
+}
 export type IGetOrdersIncludingProductRequest = Pick<ICartItem, "productId" | "creatorId"> &
     Pick<IUser, "role">;
-export type IGetPendingCartItemsRequest = Pick<ICartItem, "creatorId"> & Pick<IUser, "role">;
-export type IGetCartItemsRequest = IGetPendingCartItemsRequest & Pick<ICartItem, "orderId">;
-export interface IMergePendingCartItemsRequest extends Pick<IUser, "role"> {
-    readonly creatorId: Required<ICartItem["creatorId"]>;
-    readonly items: Array<Pick<ICartItem, "productId" | "quantity">>;
+export interface IGetPendingCartItemsRequest {
+    readonly creatorId: ICartItem["creatorId"];
+    readonly role: IUser["role"];
 }
-export type IMergeCartItemsRequest = IMergePendingCartItemsRequest & Pick<ICartItem, "orderId">;
+export interface IGetCartItemsInOrderRequest extends IGetPendingCartItemsRequest {
+    readonly orderId: ICartItem["orderId"];
+}
+export interface IMergePendingCartItemsRequest {
+    readonly role: IUser["role"];
+    readonly creatorId: Required<ICartItem["creatorId"]>;
+    readonly cartItems: Array<Pick<ICartItem, "productId" | "quantity">>;
+}
+export interface IMergePendingCartItemsInOrderRequest extends IMergePendingCartItemsRequest {
+    readonly orderId: ICartItem["orderId"];
+}
