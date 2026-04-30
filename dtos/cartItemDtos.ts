@@ -22,8 +22,6 @@ export interface IDeleteCartItemRequest {
     readonly creatorId: ICartItem["creatorId"];
     readonly role: IUser["role"];
 }
-export type IGetOrdersIncludingProductRequest = Pick<ICartItem, "productId" | "creatorId"> &
-    Pick<IUser, "role">;
 export interface IGetPendingCartItemsRequest {
     readonly creatorId: ICartItem["creatorId"];
     readonly role: IUser["role"];
@@ -36,6 +34,6 @@ export interface IMergePendingCartItemsRequest {
     readonly creatorId: Required<ICartItem["creatorId"]>;
     readonly cartItems: Array<Pick<ICartItem, "productId" | "quantity">>;
 }
-export interface IMergePendingCartItemsInOrderRequest extends IMergePendingCartItemsRequest {
+export interface IMergeCartItemsInOrderRequest extends IMergePendingCartItemsRequest {
     readonly orderId: ICartItem["orderId"];
 }
