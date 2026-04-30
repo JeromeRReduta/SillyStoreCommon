@@ -2,10 +2,8 @@ import { IOrder } from "../domain-objects/Order.ts";
 import { IUser } from "../domain-objects/User.ts";
 
 export type IOrderResponse = IOrder;
-export type ICreateOrderRequest = Pick<IOrder, "dateStr" | "userId" | "status">;
-export interface IGetAllOrdersRequest extends Pick<IOrder, "userId"> {
-    readonly isAdmin: boolean;
-}
+export type ICreateOrderRequest = Omit<IOrder, "id"> & Pick<IUser, "role">;
+export type IGetAllOrdersRequest = Pick<IOrder, "userId"> & Pick<IUser, "role">;
 export type IGetOrderRequest = Pick<IOrder, "id" | "userId"> & Pick<IUser, "role">;
 export type IUpdateOrderRequest = IOrder & Pick<IUser, "role">;
 export type IDeleteOrderRequest = Pick<IOrder, "id" | "userId"> & Pick<IUser, "role">;

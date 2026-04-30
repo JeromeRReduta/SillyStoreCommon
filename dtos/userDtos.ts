@@ -10,7 +10,4 @@ export type IGetAllUsersRequest = object;
 export type IGetUserRequest = Pick<IUser, "id">;
 export type IUpdateUserRequest = IUser;
 export type IDeleteUserRequest = Pick<IUser, "id">;
-export type IGetUserByCredentialsRequest = Pick<
-    IUser,
-    "username" | "email" | "pw"
->;
+export type IGetUserByCredentialsRequest = Pick<IUser, "email" | "pw">;
