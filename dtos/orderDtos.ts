@@ -29,3 +29,4 @@ export interface IGetAllPendingOrdersRequest {
     readonly userId: IOrder["userId"];
     readonly role: IUser["role"];
 }
+export type IUpdatePendingOrderRequest = Omit<IUpdateOrderRequest, "id">;
