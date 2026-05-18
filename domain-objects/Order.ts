@@ -1,4 +1,4 @@
-export type OrderStatus = "pending" | "complete" | "canceled";
+export type OrderStatus = "pending" | "completed" | "canceled";
 export interface IOrder {
     readonly id: number;
     readonly dateStr: string;
