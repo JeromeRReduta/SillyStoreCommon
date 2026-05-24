@@ -2,9 +2,9 @@
     "compilerOptions": {
         "target": "ESNext",
         "useDefineForClassFields": true,
-        "module": "nodenext",
+        "module": "esnext",
         "lib": ["ESNext", "DOM"],
-        "moduleResolution": "nodenext",
+        "moduleResolution": "bundler",
         "strict": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
@@ -17,5 +17,14 @@
         "allowImportingTsExtensions": true,
         "types": ["node"]
     },
-    "include": ["src", "vite-env.d.ts", "eslint.config.ts", "requests", "domain-objects", "logging", "configs", "dtos"]
+    "include": [
+        "src",
+        "vite-env.d.ts",
+        "eslint.config.ts",
+        "requests",
+        "domain-objects",
+        "logging",
+        "configs",
+        "dtos"
+    ]
 }
