@@ -1,12 +1,12 @@
 import { requireNumber, requireStr } from "./ConfigValidation.ts";
 import { IDbConfigs } from "./DbConfigs.ts";
 import { IJwtConfigs } from "./JwtConfigs.ts";
-import { LoggingConfigs } from "./LoggingConfigs.ts";
+import { ILoggingConfigs } from "./LoggingConfigs.ts";
 
 export interface ICommonConfigs {
     readonly db: IDbConfigs;
     readonly jwt: IJwtConfigs;
-    readonly logging: LoggingConfigs;
+    readonly logging: ILoggingConfigs;
 }
 
 const { DATABASE_URL, JWT_SECRET, MIN_LOG_LEVEL, PORT } = process.env;
